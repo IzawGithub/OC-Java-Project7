@@ -1,0 +1,23 @@
+CREATE TABLE trade (
+  id UUID PRIMARY KEY NOT NULL DEFAULT UUID(),
+  account VARCHAR(30),
+  type VARCHAR(30),
+  buy_quantity DOUBLE,
+  sell_quantity DOUBLE,
+  buy_price DOUBLE,
+  sell_price DOUBLE,
+  trade_date TIMESTAMP,
+  security VARCHAR(125),
+  status VARCHAR(10),
+  trader VARCHAR(125),
+  benchmark VARCHAR(125),
+  book VARCHAR(125),
+  creation_name VARCHAR(125),
+  creation_date TIMESTAMP,
+  revision_name VARCHAR(125),
+  revision_date TIMESTAMP,
+  deal_name VARCHAR(125),
+  deal_type VARCHAR(125),
+  source_list_id VARCHAR(125),
+  side VARCHAR(125)
+);
