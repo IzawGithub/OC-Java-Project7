@@ -1,5 +1,6 @@
 package com.poseidoncapitalsolutions.aggregator.domains;
 
+import com.poseidoncapitalsolutions.aggregator.domains.helper.IDomain;
 import com.poseidoncapitalsolutions.aggregator.domains.internal.Password;
 
 import jakarta.persistence.Embedded;
@@ -20,7 +21,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Data
 @Entity
-public class User {
+public class User implements IDomain {
     @Builder.Default
     @Id
     @NonNull private UUID id = UUID.randomUUID();
