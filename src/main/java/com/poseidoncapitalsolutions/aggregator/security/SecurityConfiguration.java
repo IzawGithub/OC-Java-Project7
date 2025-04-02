@@ -29,6 +29,10 @@ public class SecurityConfiguration {
     @Bean
     @NonNull SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http.authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers("/css/**")
+                        .permitAll()
+                        .requestMatchers("/js/**")
+                        .permitAll()
                         .anyRequest()
                         .authenticated())
                 // We use standard form based auth
