@@ -7,6 +7,7 @@ import com.poseidoncapitalsolutions.aggregator.domains.helper.IDomain;
 import com.poseidoncapitalsolutions.aggregator.repositories.BidListRepository;
 import com.poseidoncapitalsolutions.aggregator.repositories.CurvePointRepository;
 import com.poseidoncapitalsolutions.aggregator.repositories.RatingRepository;
+import com.poseidoncapitalsolutions.aggregator.repositories.RuleNameRepository;
 import com.poseidoncapitalsolutions.aggregator.repositories.UserRepository;
 import com.poseidoncapitalsolutions.aggregator.utils.Password;
 
@@ -52,6 +53,16 @@ class DomainTest {
                                 .orderNumber(10)
                                 .build()),
                 Arguments.of(
+                        ruleRepository,
+                        RuleName.builder()
+                                .name("Rule Name")
+                                .description("Description")
+                                .json("Json")
+                                .template("Template")
+                                .sqlStr("SQL")
+                                .sqlPart("SQL Part")
+                                .build()),
+                Arguments.of(
                         userRepository,
                         User.builder()
                                 .username("Username")
@@ -91,6 +102,8 @@ class DomainTest {
 
     @NonNull private final RatingRepository ratingRepository;
 
+    @NonNull private final RuleNameRepository ruleRepository;
+
     @NonNull private final UserRepository userRepository;
 
     @Autowired
@@ -98,10 +111,12 @@ class DomainTest {
             @NonNull final BidListRepository bidListRepository,
             @NonNull final CurvePointRepository curvePointRepository,
             @NonNull final RatingRepository ratingRepository,
+            @NonNull final RuleNameRepository ruleRepository,
             @NonNull final UserRepository userRepository) {
         this.bidListRepository = bidListRepository;
         this.curvePointRepository = curvePointRepository;
         this.ratingRepository = ratingRepository;
+        this.ruleRepository = ruleRepository;
         this.userRepository = userRepository;
     }
 }
