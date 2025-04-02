@@ -8,6 +8,7 @@ import com.poseidoncapitalsolutions.aggregator.repositories.BidListRepository;
 import com.poseidoncapitalsolutions.aggregator.repositories.CurvePointRepository;
 import com.poseidoncapitalsolutions.aggregator.repositories.RatingRepository;
 import com.poseidoncapitalsolutions.aggregator.repositories.RuleNameRepository;
+import com.poseidoncapitalsolutions.aggregator.repositories.TradeRepository;
 import com.poseidoncapitalsolutions.aggregator.repositories.UserRepository;
 import com.poseidoncapitalsolutions.aggregator.utils.Password;
 
@@ -63,6 +64,9 @@ class DomainTest {
                                 .sqlPart("SQL Part")
                                 .build()),
                 Arguments.of(
+                        tradeRepository,
+                        Trade.builder().account("Trade Account").type("Type").build()),
+                Arguments.of(
                         userRepository,
                         User.builder()
                                 .username("Username")
@@ -104,6 +108,8 @@ class DomainTest {
 
     @NonNull private final RuleNameRepository ruleRepository;
 
+    @NonNull private final TradeRepository tradeRepository;
+
     @NonNull private final UserRepository userRepository;
 
     @Autowired
@@ -112,11 +118,13 @@ class DomainTest {
             @NonNull final CurvePointRepository curvePointRepository,
             @NonNull final RatingRepository ratingRepository,
             @NonNull final RuleNameRepository ruleRepository,
+            @NonNull final TradeRepository tradeRepository,
             @NonNull final UserRepository userRepository) {
         this.bidListRepository = bidListRepository;
         this.curvePointRepository = curvePointRepository;
         this.ratingRepository = ratingRepository;
         this.ruleRepository = ruleRepository;
+        this.tradeRepository = tradeRepository;
         this.userRepository = userRepository;
     }
 }
