@@ -7,6 +7,7 @@ import com.poseidoncapitalsolutions.aggregator.domains.helper.IDomain;
 import com.poseidoncapitalsolutions.aggregator.domains.internal.Password;
 import com.poseidoncapitalsolutions.aggregator.repositories.BidListRepository;
 import com.poseidoncapitalsolutions.aggregator.repositories.CurvePointRepository;
+import com.poseidoncapitalsolutions.aggregator.repositories.RatingRepository;
 import com.poseidoncapitalsolutions.aggregator.repositories.UserRepository;
 
 import org.junit.jupiter.api.TestInstance;
@@ -39,6 +40,14 @@ class DomainTest {
                 Arguments.of(
                         curvePointRepository,
                         CurvePoint.builder().curveId(10).term(10d).value(30d).build()),
+                Arguments.of(
+                        ratingRepository,
+                        Rating.builder()
+                                .moodysRating("Moodys Rating")
+                                .sandPRating("Sand PRating")
+                                .fitchRating("Fich Rating")
+                                .orderNumber(10)
+                                .build()),
                 Arguments.of(
                         userRepository,
                         User.builder()
@@ -77,15 +86,19 @@ class DomainTest {
 
     @NonNull private final CurvePointRepository curvePointRepository;
 
+    @NonNull private final RatingRepository ratingRepository;
+
     @NonNull private final UserRepository userRepository;
 
     @Autowired
     DomainTest(
             @NonNull final BidListRepository bidListRepository,
             @NonNull final CurvePointRepository curvePointRepository,
+            @NonNull final RatingRepository ratingRepository,
             @NonNull final UserRepository userRepository) {
         this.bidListRepository = bidListRepository;
         this.curvePointRepository = curvePointRepository;
+        this.ratingRepository = ratingRepository;
         this.userRepository = userRepository;
     }
 }
