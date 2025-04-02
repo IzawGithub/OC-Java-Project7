@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import com.poseidoncapitalsolutions.aggregator.domains.helper.IDomain;
 import com.poseidoncapitalsolutions.aggregator.domains.internal.Password;
+import com.poseidoncapitalsolutions.aggregator.repositories.BidListRepository;
 import com.poseidoncapitalsolutions.aggregator.repositories.UserRepository;
 
 import org.junit.jupiter.api.TestInstance;
@@ -27,6 +28,13 @@ import java.util.stream.Stream;
 class DomainTest {
     Stream<Arguments> repositoryProvider() {
         return Stream.of(
+                Arguments.of(
+                        bidListRepository,
+                        BidList.builder()
+                                .account("Account Test")
+                                .type("Type test")
+                                .bidQuantity(10d)
+                                .build()),
                 Arguments.of(
                         userRepository,
                         User.builder()
@@ -61,10 +69,15 @@ class DomainTest {
 
     // -- Beans --
 
+    @NonNull private final BidListRepository bidListRepository;
+
     @NonNull private final UserRepository userRepository;
 
     @Autowired
-    DomainTest(@NonNull final UserRepository userRepository) {
+    DomainTest(
+            @NonNull final BidListRepository bidListRepository,
+            @NonNull final UserRepository userRepository) {
+        this.bidListRepository = bidListRepository;
         this.userRepository = userRepository;
     }
 }
