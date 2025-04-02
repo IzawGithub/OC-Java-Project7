@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/Base}"
+>
+    <body layout:fragment="root">
+        <div class="container">
+            <div class="row">
+                <h2 layout:fragment="Title">Default title</h2>
+            </div>
+            <form layout:fragment="Form" class="row"></form>
+        </div>
+    </body>
+</html>
