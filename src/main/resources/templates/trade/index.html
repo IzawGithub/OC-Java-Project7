@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/Read}"
+>
+    <h2 layout:fragment="Title">Trade List</h2>
+    <div layout:fragment="Table" class="row">
+        <a href="/trade/create" class="btn btn-primary btn-sm">Add New</a>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Account</th>
+                    <th>Type</th>
+                    <th>Buy Quantity</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="trade : ${listItems}">
+                    <td style="width: 10%" th:text="${trade.id}"></td>
+                    <td th:text="${trade.account}"></td>
+                    <td th:text="${trade.type}"></td>
+                    <td th:text="${trade.buyQuantity}"></td>
+                    <td style="width: 15%" class="text-center">
+                        <a th:href="@{/trade/update/{id}(id=${trade.id})}"
+                        >Update</a>
+                        <form
+                            th:action="@{/trade/{id}(id=${trade.id})}"
+                            th:method="delete"
+                            action="#"
+                        >
+                            <button class="btn btn-link">
+                                Delete
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</html>
+
+</html>
