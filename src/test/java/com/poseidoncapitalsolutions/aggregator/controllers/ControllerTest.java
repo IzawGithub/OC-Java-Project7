@@ -27,6 +27,7 @@ import com.poseidoncapitalsolutions.aggregator.domains.RuleName;
 import com.poseidoncapitalsolutions.aggregator.domains.Trade;
 import com.poseidoncapitalsolutions.aggregator.domains.User;
 import com.poseidoncapitalsolutions.aggregator.domains.helper.IDomain;
+import com.poseidoncapitalsolutions.aggregator.domains.internal.Password;
 import com.poseidoncapitalsolutions.aggregator.repositories.UserRepository;
 import com.poseidoncapitalsolutions.aggregator.services.GenericService;
 
