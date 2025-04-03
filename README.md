@@ -13,6 +13,10 @@ PoseidonCapitalSolutions aggregator makes storing assets safe and secure.
   - [Running the application](#running-the-application)
     - [Maven](#maven)
     - [Container](#container)
+  - [Testing](#testing)
+    - [Coverage](#coverage)
+    - [Test execution](#test-execution)
+    - [Mutation](#mutation)
 
 ## Tech stack
 
@@ -84,3 +88,15 @@ docker-compose up -d
 # Using Podman
 podman-compose up -d
 ```
+
+## Testing
+
+This application was tested on a Linux machine (Ubuntu 24.10 x86_64).
+
+### Coverage
+
+![Jacoco coverage](./assets/coverage.png)
+
+### Mutation
+
+![PIT test](./assets/mutation.png)
