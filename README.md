@@ -6,8 +6,30 @@ PoseidonCapitalSolutions aggregator makes storing assets safe and secure.
 
 - [PoseidonCapitalSolutions](#poseidoncapitalsolutions)
   - [Table of contents](#table-of-contents)
+  - [Tech stack](#tech-stack)
+    - [Database](#database)
+    - [Backend](#backend)
+    - [Frontend](#frontend)
   - [Running the application](#running-the-application)
     - [Maven](#maven)
+
+## Tech stack
+
+### Database
+
+- [MariaDb](https://mariadb.org/): SQL database.
+- [SQLx](https://github.com/launchbadge/sqlx): Simple SQL migration.
+
+### Backend
+
+- [Maven](https://maven.apache.org/): Integrated build tool with `mvnw`.
+- [Java](https://www.java.com/en/) >=21.
+- [Spring boot](https://spring.io/projects/spring-boot): Configure a Spring project.
+
+### Frontend
+
+- [Thymeleaf](https://www.thymeleaf.org/): Java templating engine.
+- [Bootstrap](https://getbootstrap.com/): CSS framework.
 
 ## Running the application
 
