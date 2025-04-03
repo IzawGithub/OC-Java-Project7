@@ -14,8 +14,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import com.poseidoncapitalsolutions.aggregator.HelperTest;
 import com.poseidoncapitalsolutions.aggregator.controller.BidListController;
+import com.poseidoncapitalsolutions.aggregator.controller.CurveController;
 import com.poseidoncapitalsolutions.aggregator.controller.GenericController;
 import com.poseidoncapitalsolutions.aggregator.domains.BidList;
+import com.poseidoncapitalsolutions.aggregator.domains.CurvePoint;
 import com.poseidoncapitalsolutions.aggregator.domains.User;
 import com.poseidoncapitalsolutions.aggregator.domains.helper.IDomain;
 import com.poseidoncapitalsolutions.aggregator.repositories.UserRepository;
@@ -66,6 +68,14 @@ class ControllerTest<T extends IDomain, Service extends GenericService<T, ?>> {
                                 .account("Account Test")
                                 .type("Type test")
                                 .bidQuantity(10d)
+                                .build()),
+                Arguments.of(
+                        curveController,
+                        CurvePoint.builder()
+                                .id(HelperTest.uuid())
+                                .curveId(10)
+                                .term(10d)
+                                .value(30d)
                                 .build()));
     }
 
@@ -325,13 +335,17 @@ class ControllerTest<T extends IDomain, Service extends GenericService<T, ?>> {
 
     @NonNull private final BidListController bidListController;
 
+    @NonNull private final CurveController curveController;
+
     @Autowired
     ControllerTest(
             @NonNull final MockMvc mockMvc,
             @NonNull final UserRepository userRepository,
-            @NonNull final BidListController bidListController) {
+            @NonNull final BidListController bidListController,
+            @NonNull final CurveController curveController) {
         this.mockMvc = mockMvc;
         this.userRepository = userRepository;
         this.bidListController = bidListController;
+        this.curveController = curveController;
     }
 }
