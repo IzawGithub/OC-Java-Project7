@@ -1,0 +1,7 @@
+FROM docker.io/rust:alpine
+
+WORKDIR /app
+
+RUN cargo install sqlx-cli --no-default-features --features rustls,mysql
+
+CMD ["sqlx", "migrate", "run"]
