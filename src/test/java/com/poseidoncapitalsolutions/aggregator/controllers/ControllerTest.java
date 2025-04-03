@@ -17,9 +17,11 @@ import com.poseidoncapitalsolutions.aggregator.controller.BidListController;
 import com.poseidoncapitalsolutions.aggregator.controller.CurveController;
 import com.poseidoncapitalsolutions.aggregator.controller.GenericController;
 import com.poseidoncapitalsolutions.aggregator.controller.RatingController;
+import com.poseidoncapitalsolutions.aggregator.controller.RuleNameController;
 import com.poseidoncapitalsolutions.aggregator.domains.BidList;
 import com.poseidoncapitalsolutions.aggregator.domains.CurvePoint;
 import com.poseidoncapitalsolutions.aggregator.domains.Rating;
+import com.poseidoncapitalsolutions.aggregator.domains.RuleName;
 import com.poseidoncapitalsolutions.aggregator.domains.User;
 import com.poseidoncapitalsolutions.aggregator.domains.helper.IDomain;
 import com.poseidoncapitalsolutions.aggregator.repositories.UserRepository;
@@ -87,6 +89,17 @@ class ControllerTest<T extends IDomain, Service extends GenericService<T, ?>> {
                                 .sandPRating("Sand PRating")
                                 .fitchRating("Fich Rating")
                                 .orderNumber(10)
+                                .build()),
+                Arguments.of(
+                        ruleNameController,
+                        RuleName.builder()
+                                .id(HelperTest.uuid())
+                                .name("Rule Name")
+                                .description("Description")
+                                .json("Json")
+                                .template("Template")
+                                .sqlStr("SQL")
+                                .sqlPart("SQL Part")
                                 .build()));
     }
 
@@ -350,17 +363,21 @@ class ControllerTest<T extends IDomain, Service extends GenericService<T, ?>> {
 
     @NonNull private final RatingController ratingController;
 
+    @NonNull private final RuleNameController ruleNameController;
+
     @Autowired
     ControllerTest(
             @NonNull final MockMvc mockMvc,
             @NonNull final UserRepository userRepository,
             @NonNull final BidListController bidListController,
             @NonNull final CurveController curveController,
-            @NonNull final RatingController ratingController) {
+            @NonNull final RatingController ratingController,
+            @NonNull final RuleNameController ruleNameController) {
         this.mockMvc = mockMvc;
         this.userRepository = userRepository;
         this.bidListController = bidListController;
         this.curveController = curveController;
         this.ratingController = ratingController;
+        this.ruleNameController = ruleNameController;
     }
 }

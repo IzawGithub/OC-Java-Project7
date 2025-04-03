@@ -251,6 +251,125 @@
     </body>
 </html>
 
+╔═ createForm/com.poseidoncapitalsolutions.aggregator.controller.RuleNameController$$SpringCGLIB$$0 ═╗
+<!DOCTYPE html>
+<html
+    class="h-dvh"
+    data-theme="light" xmlns="http://www.w3.org/1999/xhtml"
+>
+    <head>
+        <meta charset="UTF-8" />
+        <link
+            href="/favicon/favicon.svg"
+            rel="icon"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <title>PoseidonCapitalSolution — Aggregator</title>
+        <!-- TODO: Use an actual package manager instead of downloaded CDN file -->
+        <link
+            href="/css/bootstrap.min.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <script src="/js/bootstrap.min.js"></script>
+    </head>
+    <body id="root" class="flex-1 flex-col">
+        <div class="container">
+            <div class="row">
+                <h2>Add new Rule</h2>
+            </div>
+            <form class="form-horizontal" method="post" action="/ruleName" style="width: 100%"><input type="hidden" name="_csrf" value=""/>
+        <div class="form-group">
+            <label for="name" class="col-sm-2 control-label">Name</label>
+            <div class="col-sm-10">
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Name"
+                    class="col-4" name="name" value=""
+                >
+                
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="description" class="col-sm-2 control-label"
+            >Description</label>
+            <div class="col-sm-10">
+                <input
+                    type="text"
+                    id="description"
+                    placeholder="Description"
+                    class="col-4" name="description" value=""
+                >
+                
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="json" class="col-sm-2 control-label">Json</label>
+            <div class="col-sm-10">
+                <input
+                    type="text"
+                    id="json"
+                    placeholder="Json"
+                    class="col-4" name="json" value=""
+                >
+                
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="template" class="col-sm-2 control-label"
+            >Template</label>
+            <div class="col-sm-10">
+                <input
+                    type="text"
+                    id="template"
+                    placeholder="Template"
+                    class="col-4" name="template" value=""
+                >
+                
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="sqlStr" class="col-sm-2 control-label">SQL string</label>
+            <div class="col-sm-10">
+                <input
+                    type="text"
+                    id="sqlStr"
+                    placeholder="SQL string"
+                    class="col-4" name="sqlStr" value=""
+                >
+                
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="sqlPart" class="col-sm-2 control-label">SQL Part</label>
+            <div class="col-sm-10">
+                <input
+                    type="text"
+                    id="sqlPart"
+                    placeholder="SQL Part"
+                    class="col-4" name="sqlPart" value=""
+                >
+                
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-12">
+                <a class="btn btn-danger btn-sm" href="/rule">Cancel</a>
+                <input
+                    class="btn btn-primary btn-sm"
+                    type="submit"
+                    value="Add Rule"
+                >
+            </div>
+        </div>
+    </form>
+        </div>
+    </body>
+</html>
+
 ╔═ index/com.poseidoncapitalsolutions.aggregator.controller.BidListController$$SpringCGLIB$$0 ═╗
 <!DOCTYPE html>
 <html
@@ -442,6 +561,78 @@
                     <th>SandPRating</th>
                     <th>FitchRating</th>
                     <th>Order</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
+        </div>
+    </body>
+</html>
+
+</html>
+
+╔═ index/com.poseidoncapitalsolutions.aggregator.controller.RuleNameController$$SpringCGLIB$$0 ═╗
+<!DOCTYPE html>
+<html
+    class="h-dvh"
+    data-theme="light" xmlns="http://www.w3.org/1999/xhtml"
+>
+    <head>
+        <meta charset="UTF-8" />
+        <link
+            href="/favicon/favicon.svg"
+            rel="icon"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <title>PoseidonCapitalSolution — Aggregator</title>
+        <!-- TODO: Use an actual package manager instead of downloaded CDN file -->
+        <link
+            href="/css/bootstrap.min.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <script src="/js/bootstrap.min.js"></script>
+    </head>
+    <body id="root" class="flex-1 flex-col">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <a href="/bidList">Bid List</a> 
+                    <a href="/curvePoint">Curve Points</a> 
+                    <a href="/rating">Ratings</a> 
+                    <a href="/ruleName">Rule</a> 
+                    <a href="/trade">Trade</a> 
+                </div>
+                <div class="col-6 text-right">
+                    Logged in user: <b
+                        class="user"
+                    >John Doe</b>
+                    <form action="/auth/log-out" method="POST"><input type="hidden" name="_csrf" value=""/>
+                        <input type="submit" value="Logout" />
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <h2>Rule List</h2>
+            </div>
+            <div class="row">
+        <a href="/ruleName/create" class="btn btn-primary btn-sm"
+        >Add New</a>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>json</th>
+                    <th>template</th>
+                    <th>sql</th>
+                    <th>sqlPart</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -706,6 +897,127 @@
                     class="btn btn-primary btn-sm"
                     type="submit"
                     value="Update Rating"
+                >
+            </div>
+        </div>
+    </form>
+        </div>
+    </body>
+</html>
+
+╔═ updateForm/com.poseidoncapitalsolutions.aggregator.controller.RuleNameController$$SpringCGLIB$$0 ═╗
+<!DOCTYPE html>
+<html
+    class="h-dvh"
+    data-theme="light" xmlns="http://www.w3.org/1999/xhtml"
+>
+    <head>
+        <meta charset="UTF-8" />
+        <link
+            href="/favicon/favicon.svg"
+            rel="icon"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <title>PoseidonCapitalSolution — Aggregator</title>
+        <!-- TODO: Use an actual package manager instead of downloaded CDN file -->
+        <link
+            href="/css/bootstrap.min.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <script src="/js/bootstrap.min.js"></script>
+    </head>
+    <body id="root" class="flex-1 flex-col">
+        <div class="container">
+            <div class="row">
+                <h2>Update Rule Name</h2>
+            </div>
+            <form class="form-horizontal" method="post" action="/ruleName" style="width: 100%"><input type="hidden" name="_csrf" value=""/>
+        <input type="hidden" name="id" value="76543210-dcba-cba1-dcba-ba9876543210" />
+        <div class="form-group">
+            <label for="name" class="col-sm-2 control-label">Name</label>
+            <div class="col-sm-10">
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Name"
+                    class="col-4" name="name" value="Rule Name"
+                >
+                
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="description" class="col-sm-2 control-label"
+            >Description</label>
+            <div class="col-sm-10">
+                <input
+                    type="text"
+                    id="description"
+                    placeholder="Description"
+                    class="col-4" name="description" value="Description"
+                >
+                
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="json" class="col-sm-2 control-label">Json</label>
+            <div class="col-sm-10">
+                <input
+                    type="text"
+                    id="json"
+                    placeholder="Json"
+                    class="col-4" name="json" value="Json"
+                >
+                
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="template" class="col-sm-2 control-label"
+            >Template</label>
+            <div class="col-sm-10">
+                <input
+                    type="text"
+                    id="template"
+                    placeholder="Template"
+                    class="col-4" name="template" value="Template"
+                >
+                
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="sqlStr" class="col-sm-2 control-label">SQL Str</label>
+            <div class="col-sm-10">
+                <input
+                    type="text"
+                    id="sqlStr"
+                    placeholder="SQL Str"
+                    class="col-4" name="sqlStr" value="SQL"
+                >
+                
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="sqlPart" class="col-sm-2 control-label">SQL Part</label>
+            <div class="col-sm-10">
+                <input
+                    type="text"
+                    id="sqlPart"
+                    placeholder="SQL Part"
+                    class="col-4" name="sqlPart" value="SQL Part"
+                >
+                
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-12">
+                <input type="hidden" id="id" name="id" value="76543210-dcba-cba1-dcba-ba9876543210">
+                <a class="btn btn-danger btn-sm" href="/rule">Cancel</a>
+                <input
+                    class="btn btn-primary btn-sm"
+                    type="submit"
+                    value="Update Rule"
                 >
             </div>
         </div>
