@@ -36,6 +36,7 @@ public class SecurityConfiguration {
                         .authenticated())
                 // We use standard form based auth
                 .formLogin(form -> form.loginPage("/auth/log-in")
+                        .defaultSuccessUrl("/bidList")
                         .permitAll())
                 .logout(logout -> logout.logoutUrl("/auth/log-out")
                         .logoutSuccessUrl("/")
