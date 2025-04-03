@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/Read}"
+>
+    <h2 layout:fragment="Title">Curve Point List</h2>
+    <div layout:fragment="Table" class="row">
+        <a href="/curvePoint/create" class="btn btn-primary btn-sm">Add New</a>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>CurvePointId</th>
+                    <th>Term</th>
+                    <th>Value</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="curvePoint : ${listItems}">
+                    <td style="width: 10%" th:text="${curvePoint.id}"></td>
+                    <td th:text="${curvePoint.id}"></td>
+                    <td th:text="${curvePoint.term}"></td>
+                    <td th:text="${curvePoint.value}"></td>
+                    <td style="width: 15%" class="text-center">
+                        <a
+                            th:href="@{/curvePoint/update/{id}(id=${curvePoint.id})}"
+                        >Update</a>
+                        <form
+                            th:action="@{/curvePoint/{id}(id=${curvePoint.id})}"
+                            th:method="delete"
+                            action="#"
+                        >
+                            <button class="btn btn-link">
+                                Delete
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</html>
+
+</html>
