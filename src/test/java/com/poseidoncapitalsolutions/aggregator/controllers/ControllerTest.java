@@ -14,8 +14,17 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import com.poseidoncapitalsolutions.aggregator.HelperTest;
 import com.poseidoncapitalsolutions.aggregator.controller.BidListController;
+import com.poseidoncapitalsolutions.aggregator.controller.CurveController;
 import com.poseidoncapitalsolutions.aggregator.controller.GenericController;
+import com.poseidoncapitalsolutions.aggregator.controller.RatingController;
+import com.poseidoncapitalsolutions.aggregator.controller.RuleNameController;
+import com.poseidoncapitalsolutions.aggregator.controller.TradeController;
+import com.poseidoncapitalsolutions.aggregator.controller.UserController;
 import com.poseidoncapitalsolutions.aggregator.domains.BidList;
+import com.poseidoncapitalsolutions.aggregator.domains.CurvePoint;
+import com.poseidoncapitalsolutions.aggregator.domains.Rating;
+import com.poseidoncapitalsolutions.aggregator.domains.RuleName;
+import com.poseidoncapitalsolutions.aggregator.domains.Trade;
 import com.poseidoncapitalsolutions.aggregator.domains.User;
 import com.poseidoncapitalsolutions.aggregator.domains.helper.IDomain;
 import com.poseidoncapitalsolutions.aggregator.repositories.UserRepository;
@@ -55,6 +64,7 @@ import java.util.stream.Stream;
 @SpringBootTest
 @Transactional
 @WithUserDetails(value = "John Doe")
+@TestInstance(Lifecycle.PER_CLASS)
 class ControllerTest<T extends IDomain, Service extends GenericService<T, ?>> {
     private User userJohnDoe = HelperTest.johnDoe();
 
@@ -109,11 +119,7 @@ class ControllerTest<T extends IDomain, Service extends GenericService<T, ?>> {
                         User.builder()
                                 .id(HelperTest.uuid())
                                 .username("Username")
-                                .password(Password.builder()
-                                        .password("Val1dPassword!")
-                                        .build())
                                 .fullname("Fullname")
-                                .role("Role")
                                 .build()));
     }
 

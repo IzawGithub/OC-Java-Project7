@@ -370,6 +370,187 @@
     </body>
 </html>
 
+╔═ createForm/com.poseidoncapitalsolutions.aggregator.controller.TradeController$$SpringCGLIB$$0 ═╗
+<!DOCTYPE html>
+<html
+    class="h-dvh"
+    data-theme="light" xmlns="http://www.w3.org/1999/xhtml"
+>
+    <head>
+        <meta charset="UTF-8" />
+        <link
+            href="/favicon/favicon.svg"
+            rel="icon"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <title>PoseidonCapitalSolution — Aggregator</title>
+        <!-- TODO: Use an actual package manager instead of downloaded CDN file -->
+        <link
+            href="/css/bootstrap.min.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <script src="/js/bootstrap.min.js"></script>
+    </head>
+    <body id="root" class="flex-1 flex-col">
+        <div class="container">
+            <div class="row">
+                <h2>Add new Trade</h2>
+            </div>
+            <form class="form-horizontal" method="post" action="/trade" style="width: 100%"><input type="hidden" name="_csrf" value=""/>
+        <div class="form-group">
+            <label for="account" class="col-sm-2 control-label">Account</label>
+            <div class="col-sm-10">
+                <input
+                    type="text"
+                    id="account"
+                    placeholder="Account"
+                    class="col-4" name="account" value=""
+                >
+                
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="type" class="col-sm-2 control-label">Type</label>
+            <div class="col-sm-10">
+                <input
+                    type="text"
+                    id="type"
+                    placeholder="Type"
+                    class="col-4" name="type" value=""
+                >
+                
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="buyQuantity" class="col-sm-2 control-label"
+            >Buy Quantity</label>
+            <div class="col-sm-10">
+                <input
+                    type="number"
+                    id="buyQuantity"
+                    placeholder="Buy Quantity"
+                    class="col-4" name="buyQuantity" value=""
+                >
+                
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-12">
+                <a class="btn btn-danger btn-sm" href="/trade">Cancel</a>
+                <input
+                    class="btn btn-primary btn-sm"
+                    type="submit"
+                    value="Add Trade"
+                >
+            </div>
+        </div>
+    </form>
+        </div>
+    </body>
+</html>
+
+╔═ createForm/com.poseidoncapitalsolutions.aggregator.controller.UserController$$SpringCGLIB$$0 ═╗
+<!DOCTYPE html>
+<html
+    class="h-dvh"
+    data-theme="light" xmlns="http://www.w3.org/1999/xhtml"
+>
+    <head>
+        <meta charset="UTF-8" />
+        <link
+            href="/favicon/favicon.svg"
+            rel="icon"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <title>PoseidonCapitalSolution — Aggregator</title>
+        <!-- TODO: Use an actual package manager instead of downloaded CDN file -->
+        <link
+            href="/css/bootstrap.min.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <script src="/js/bootstrap.min.js"></script>
+    </head>
+    <body id="root" class="flex-1 flex-col">
+        <div class="container">
+            <div class="row">
+                <h2>Add new User</h2>
+            </div>
+            <form class="form-horizontal" method="post" action="/user" style="width: 100%"><input type="hidden" name="_csrf" value=""/>
+        <div class="form-group">
+            <label for="fullname" class="col-sm-2 control-label"
+            >Full Name</label>
+            <div class="col-sm-10">
+                <input
+                    type="text"
+                    id="fullname"
+                    placeholder="Full Name"
+                    class="col-4" name="fullname" value=""
+                >
+                
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="username" class="col-sm-2 control-label"
+            >User Name</label>
+            <div class="col-sm-10">
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="User Name"
+                    class="col-4" name="username" value=""
+                >
+                
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-2 control-label"
+            >Password</label>
+            <div class="col-sm-10">
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    class="col-4"
+                    required id="password" value=""
+                >
+                
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Role" class="col-sm-2 control-label">Role</label>
+            <div class="col-sm-10">
+                <label class="checkbox-inline"><input
+                        type="radio"
+                        value="ADMIN" id="role1" name="role"
+                    >Admin</label>
+                <label class="checkbox-inline"><input
+                        type="radio"
+                        value="USER" id="role2" name="role"
+                    >User</label>
+                
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-12">
+                <a class="btn btn-danger btn-sm" href="/user">Cancel</a>
+                <input
+                    class="btn btn-primary btn-sm"
+                    type="submit"
+                    value="Add user"
+                >
+            </div>
+        </div>
+    </form>
+        </div>
+    </body>
+</html>
+
 ╔═ index/com.poseidoncapitalsolutions.aggregator.controller.BidListController$$SpringCGLIB$$0 ═╗
 <!DOCTYPE html>
 <html
@@ -645,6 +826,159 @@
     </body>
 </html>
 
+</html>
+
+╔═ index/com.poseidoncapitalsolutions.aggregator.controller.TradeController$$SpringCGLIB$$0 ═╗
+<!DOCTYPE html>
+<html
+    class="h-dvh"
+    data-theme="light" xmlns="http://www.w3.org/1999/xhtml"
+>
+    <head>
+        <meta charset="UTF-8" />
+        <link
+            href="/favicon/favicon.svg"
+            rel="icon"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <title>PoseidonCapitalSolution — Aggregator</title>
+        <!-- TODO: Use an actual package manager instead of downloaded CDN file -->
+        <link
+            href="/css/bootstrap.min.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <script src="/js/bootstrap.min.js"></script>
+    </head>
+    <body id="root" class="flex-1 flex-col">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <a href="/bidList">Bid List</a> 
+                    <a href="/curvePoint">Curve Points</a> 
+                    <a href="/rating">Ratings</a> 
+                    <a href="/ruleName">Rule</a> 
+                    <a href="/trade">Trade</a> 
+                </div>
+                <div class="col-6 text-right">
+                    Logged in user: <b
+                        class="user"
+                    >John Doe</b>
+                    <form action="/auth/log-out" method="POST"><input type="hidden" name="_csrf" value=""/>
+                        <input type="submit" value="Logout" />
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <h2>Trade List</h2>
+            </div>
+            <div class="row">
+        <a href="/trade/create" class="btn btn-primary btn-sm">Add New</a>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Account</th>
+                    <th>Type</th>
+                    <th>Buy Quantity</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
+        </div>
+    </body>
+</html>
+
+</html>
+
+╔═ index/com.poseidoncapitalsolutions.aggregator.controller.UserController$$SpringCGLIB$$0 ═╗
+<!DOCTYPE html>
+<html
+    class="h-dvh"
+    data-theme="light" xmlns="http://www.w3.org/1999/xhtml"
+>
+    <head>
+        <meta charset="UTF-8" />
+        <link
+            href="/favicon/favicon.svg"
+            rel="icon"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <title>PoseidonCapitalSolution — Aggregator</title>
+        <!-- TODO: Use an actual package manager instead of downloaded CDN file -->
+        <link
+            href="/css/bootstrap.min.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <script src="/js/bootstrap.min.js"></script>
+    </head>
+    <body id="root" class="flex-1 flex-col">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <a href="/bidList">Bid List</a> 
+                    <a href="/curvePoint">Curve Points</a> 
+                    <a href="/rating">Ratings</a> 
+                    <a href="/ruleName">Rule</a> 
+                    <a href="/trade">Trade</a> 
+                </div>
+                <div class="col-6 text-right">
+                    Logged in user: <b
+                        class="user"
+                    >John Doe</b>
+                    <form action="/auth/log-out" method="POST"><input type="hidden" name="_csrf" value=""/>
+                        <input type="submit" value="Logout" />
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <h2>User List</h2>
+            </div>
+            <div class="row">
+        <a href="/user/create" class="btn btn-primary btn-sm">Add New</a>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Full Name</th>
+                    <th>User Name</th>
+                    <th>Role</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="width: 10%">01234567-abcd-1abc-abcd-0123456789ab</td>
+                    <td>FullName John Doe</td>
+                    <td>John Doe</td>
+                    <td style="width: 25%">USER</td>
+                    <td style="width: 15%" class="text-center">
+                        <a href="/user/update/01234567-abcd-1abc-abcd-0123456789ab"
+                        >Update</a>
+                        <form
+                            method="post"
+                            action="/user/01234567-abcd-1abc-abcd-0123456789ab"
+                        ><input type="hidden" name="_csrf" value=""/>
+                            <button class="btn btn-link">
+                                Delete
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                <!-- If we're admin, show all users -->
+                
+            </tbody>
+        </table>
+    </div>
+        </div>
+    </body>
 </html>
 
 ╔═ updateForm/com.poseidoncapitalsolutions.aggregator.controller.BidListController$$SpringCGLIB$$0 ═╗
@@ -1018,6 +1352,190 @@
                     class="btn btn-primary btn-sm"
                     type="submit"
                     value="Update Rule"
+                >
+            </div>
+        </div>
+    </form>
+        </div>
+    </body>
+</html>
+
+╔═ updateForm/com.poseidoncapitalsolutions.aggregator.controller.TradeController$$SpringCGLIB$$0 ═╗
+<!DOCTYPE html>
+<html
+    class="h-dvh"
+    data-theme="light" xmlns="http://www.w3.org/1999/xhtml"
+>
+    <head>
+        <meta charset="UTF-8" />
+        <link
+            href="/favicon/favicon.svg"
+            rel="icon"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <title>PoseidonCapitalSolution — Aggregator</title>
+        <!-- TODO: Use an actual package manager instead of downloaded CDN file -->
+        <link
+            href="/css/bootstrap.min.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <script src="/js/bootstrap.min.js"></script>
+    </head>
+    <body id="root" class="flex-1 flex-col">
+        <div class="container">
+            <div class="row">
+                <h2>Update Trade</h2>
+            </div>
+            <form class="form-horizontal" method="post" action="/trade" style="width: 100%"><input type="hidden" name="_csrf" value=""/>
+        <input type="hidden" name="id" value="76543210-dcba-cba1-dcba-ba9876543210" />
+        <div class="form-group">
+            <label for="account" class="col-sm-2 control-label">Account</label>
+            <div class="col-sm-10">
+                <input
+                    type="text"
+                    id="account"
+                    placeholder="Account"
+                    class="col-4" name="account" value="Trade Account"
+                >
+                
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="type" class="col-sm-2 control-label">Type</label>
+            <div class="col-sm-10">
+                <input
+                    type="text"
+                    id="type"
+                    placeholder="Type"
+                    class="col-4" name="type" value="Type"
+                >
+                
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="buyQuantity" class="col-sm-2 control-label"
+            >Buy Quantity</label>
+            <div class="col-sm-10">
+                <input
+                    type="number"
+                    id="buyQuantity"
+                    placeholder="Buy Quantity"
+                    class="col-4" name="buyQuantity" value=""
+                >
+                
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-12">
+                <input type="hidden" id="id" name="id" value="76543210-dcba-cba1-dcba-ba9876543210">
+                <a class="btn btn-danger btn-sm" href="/trade">Cancel</a>
+                <input
+                    class="btn btn-primary btn-sm"
+                    type="submit"
+                    value="Update Trade"
+                >
+            </div>
+        </div>
+    </form>
+        </div>
+    </body>
+</html>
+
+╔═ updateForm/com.poseidoncapitalsolutions.aggregator.controller.UserController$$SpringCGLIB$$0 ═╗
+<!DOCTYPE html>
+<html
+    class="h-dvh"
+    data-theme="light" xmlns="http://www.w3.org/1999/xhtml"
+>
+    <head>
+        <meta charset="UTF-8" />
+        <link
+            href="/favicon/favicon.svg"
+            rel="icon"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <title>PoseidonCapitalSolution — Aggregator</title>
+        <!-- TODO: Use an actual package manager instead of downloaded CDN file -->
+        <link
+            href="/css/bootstrap.min.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <script src="/js/bootstrap.min.js"></script>
+    </head>
+    <body id="root" class="flex-1 flex-col">
+        <div class="container">
+            <div class="row">
+                <h2>Update User</h2>
+            </div>
+            <form class="form-horizontal" method="post" action="/user" style="width: 100%"><input type="hidden" name="_csrf" value=""/>
+        <input type="hidden" name="id" value="76543210-dcba-cba1-dcba-ba9876543210"/>
+        <div class="form-group">
+            <label for="fullname" class="col-sm-2 control-label"
+            >Full Name</label>
+            <div class="col-sm-10">
+                <input
+                    type="text"
+                    id="fullname"
+                    placeholder="Full Name"
+                    class="col-4" name="fullname" value="Fullname"
+                >
+                
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="username" class="col-sm-2 control-label"
+            >User Name</label>
+            <div class="col-sm-10">
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="User Name"
+                    class="col-4" name="username" value="Username"
+                >
+                
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-2 control-label"
+            >Password</label>
+            <div class="col-sm-10">
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Password"
+                    class="col-4"
+                    required name="password" value=""
+                >
+                
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Role" class="col-sm-2 control-label">Role</label>
+            <div class="col-sm-10">
+                <label class="checkbox-inline"><input
+                        type="radio"
+                        value="ADMIN" id="role1" name="role"
+                    >Admin</label>
+                <label class="checkbox-inline"><input
+                        type="radio"
+                        value="USER" id="role2" name="role"
+                    >User</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-12">
+                <input type="hidden" id="id" name="id" value="76543210-dcba-cba1-dcba-ba9876543210">
+                <a class="btn btn-danger btn-sm" href="/user">Cancel</a>
+                <input
+                    class="btn btn-primary btn-sm"
+                    type="submit"
+                    value="Update User"
                 >
             </div>
         </div>
