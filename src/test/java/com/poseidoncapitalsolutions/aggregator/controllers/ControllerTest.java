@@ -17,15 +17,9 @@ import com.poseidoncapitalsolutions.aggregator.controller.BidListController;
 import com.poseidoncapitalsolutions.aggregator.controller.CurveController;
 import com.poseidoncapitalsolutions.aggregator.controller.GenericController;
 import com.poseidoncapitalsolutions.aggregator.controller.RatingController;
-import com.poseidoncapitalsolutions.aggregator.controller.RuleNameController;
-import com.poseidoncapitalsolutions.aggregator.controller.TradeController;
-import com.poseidoncapitalsolutions.aggregator.controller.UserController;
 import com.poseidoncapitalsolutions.aggregator.domains.BidList;
 import com.poseidoncapitalsolutions.aggregator.domains.CurvePoint;
-import com.poseidoncapitalsolutions.aggregator.domains.CurvePoint;
 import com.poseidoncapitalsolutions.aggregator.domains.Rating;
-import com.poseidoncapitalsolutions.aggregator.domains.RuleName;
-import com.poseidoncapitalsolutions.aggregator.domains.Trade;
 import com.poseidoncapitalsolutions.aggregator.domains.User;
 import com.poseidoncapitalsolutions.aggregator.domains.helper.IDomain;
 import com.poseidoncapitalsolutions.aggregator.repositories.UserRepository;
@@ -86,6 +80,15 @@ class ControllerTest<T extends IDomain, Service extends GenericService<T, ?>> {
                                 .curveId(10)
                                 .term(10d)
                                 .value(30d)
+                                .build()),
+                Arguments.of(
+                        ratingController,
+                        Rating.builder()
+                                .id(HelperTest.uuid())
+                                .moodysRating("Moodys Rating")
+                                .sandPRating("Sand PRating")
+                                .fitchRating("Fich Rating")
+                                .orderNumber(10)
                                 .build()));
     }
 
@@ -354,15 +357,19 @@ class ControllerTest<T extends IDomain, Service extends GenericService<T, ?>> {
 
     @NonNull private final CurveController curveController;
 
+    @NonNull private final RatingController ratingController;
+
     @Autowired
     ControllerTest(
             @NonNull final MockMvc mockMvc,
             @NonNull final UserRepository userRepository,
             @NonNull final BidListController bidListController,
-            @NonNull final CurveController curveController) {
+            @NonNull final CurveController curveController,
+            @NonNull final RatingController ratingController) {
         this.mockMvc = mockMvc;
         this.userRepository = userRepository;
         this.bidListController = bidListController;
         this.curveController = curveController;
+        this.ratingController = ratingController;
     }
 }
