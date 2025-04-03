@@ -12,6 +12,7 @@ PoseidonCapitalSolutions aggregator makes storing assets safe and secure.
     - [Frontend](#frontend)
   - [Running the application](#running-the-application)
     - [Maven](#maven)
+    - [Container](#container)
 
 ## Tech stack
 
@@ -33,7 +34,7 @@ PoseidonCapitalSolutions aggregator makes storing assets safe and secure.
 
 ## Running the application
 
-There is 1 way to run this application:
+There are 2 different way to run this application:
 
 ### Maven
 
@@ -71,4 +72,15 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh # Install Rust, u
 cargo install sqlx-cli
 sqlx database setup
 ./mvnw spring-boot:run
+```
+
+### Container
+
+You can run the application using an [OCI compliant container engine](https://en.wikipedia.org/wiki/Open_Container_Initiative) (like [Docker](https://www.docker.com/) or [Podman](https://podman.io/)) that supports the [compose specification](https://compose-spec.io/).
+
+```sh
+# Using Docker
+docker-compose up -d
+# Using Podman
+podman-compose up -d
 ```
