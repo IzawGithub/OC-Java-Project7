@@ -18,10 +18,13 @@ import com.poseidoncapitalsolutions.aggregator.controller.CurveController;
 import com.poseidoncapitalsolutions.aggregator.controller.GenericController;
 import com.poseidoncapitalsolutions.aggregator.controller.RatingController;
 import com.poseidoncapitalsolutions.aggregator.controller.RuleNameController;
+import com.poseidoncapitalsolutions.aggregator.controller.TradeController;
+import com.poseidoncapitalsolutions.aggregator.controller.UserController;
 import com.poseidoncapitalsolutions.aggregator.domains.BidList;
 import com.poseidoncapitalsolutions.aggregator.domains.CurvePoint;
 import com.poseidoncapitalsolutions.aggregator.domains.Rating;
 import com.poseidoncapitalsolutions.aggregator.domains.RuleName;
+import com.poseidoncapitalsolutions.aggregator.domains.Trade;
 import com.poseidoncapitalsolutions.aggregator.domains.User;
 import com.poseidoncapitalsolutions.aggregator.domains.helper.IDomain;
 import com.poseidoncapitalsolutions.aggregator.repositories.UserRepository;
@@ -100,6 +103,24 @@ class ControllerTest<T extends IDomain, Service extends GenericService<T, ?>> {
                                 .template("Template")
                                 .sqlStr("SQL")
                                 .sqlPart("SQL Part")
+                                .build()),
+                Arguments.of(
+                        tradeController,
+                        Trade.builder()
+                                .id(HelperTest.uuid())
+                                .account("Trade Account")
+                                .type("Type")
+                                .build()),
+                Arguments.of(
+                        userController,
+                        User.builder()
+                                .id(HelperTest.uuid())
+                                .username("Username")
+                                .password(Password.builder()
+                                        .password("Val1dPassword!")
+                                        .build())
+                                .fullname("Fullname")
+                                .role("Role")
                                 .build()));
     }
 
@@ -365,6 +386,10 @@ class ControllerTest<T extends IDomain, Service extends GenericService<T, ?>> {
 
     @NonNull private final RuleNameController ruleNameController;
 
+    @NonNull private final TradeController tradeController;
+
+    @NonNull private final UserController userController;
+
     @Autowired
     ControllerTest(
             @NonNull final MockMvc mockMvc,
@@ -372,12 +397,16 @@ class ControllerTest<T extends IDomain, Service extends GenericService<T, ?>> {
             @NonNull final BidListController bidListController,
             @NonNull final CurveController curveController,
             @NonNull final RatingController ratingController,
-            @NonNull final RuleNameController ruleNameController) {
+            @NonNull final RuleNameController ruleNameController,
+            @NonNull final TradeController tradeController,
+            @NonNull final UserController userController) {
         this.mockMvc = mockMvc;
         this.userRepository = userRepository;
         this.bidListController = bidListController;
         this.curveController = curveController;
         this.ratingController = ratingController;
         this.ruleNameController = ruleNameController;
+        this.tradeController = tradeController;
+        this.userController = userController;
     }
 }
