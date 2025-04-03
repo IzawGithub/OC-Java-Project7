@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/Read}"
+>
+    <h2 layout:fragment="Title">User List</h2>
+    <div layout:fragment="Table" class="row">
+        <a href="/user/create" class="btn btn-primary btn-sm">Add New</a>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Full Name</th>
+                    <th>User Name</th>
+                    <th>Role</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:with="user=${#authentication.principal}" sec:authorize="hasRole('ROLE_USER')">
+                    <td style="width: 10%" th:text="${user.id}"></td>
+                    <td th:text="${user.fullname}"></td>
+                    <td th:text="${user.username}"></td>
+                    <td style="width: 25%" th:text="${user.role}"></td>
+                    <td style="width: 15%" class="text-center">
+                        <a th:href="@{/user/update/{id}(id=${user.id})}"
+                        >Update</a>
+                        <form
+                            th:action="@{/user/{id}(id=${user.id})}"
+                            th:method="delete"
+                            action="#"
+                        >
+                            <button class="btn btn-link">
+                                Delete
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                <!-- If we're admin, show all users -->
+                <tr th:each="user : ${listItems}" sec:authorize="hasRole('ROLE_ADMIN')">
+                    <td style="width: 10%" th:text="${user.id}"></td>
+                    <td th:text="${user.fullname}"></td>
+                    <td th:text="${user.username}"></td>
+                    <td style="width: 25%" th:text="${user.role}"></td>
+                    <td style="width: 15%" class="text-center">
+                        <a th:href="@{/user/update/{id}(id=${user.id})}"
+                        >Update</a>
+                        <form
+                            th:action="@{/user/{id}(id=${user.id})}"
+                            th:method="delete"
+                            action="#"
+                        >
+                            <button class="btn btn-link">
+                                Delete
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</html>
